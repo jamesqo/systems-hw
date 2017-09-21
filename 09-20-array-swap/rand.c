@@ -21,13 +21,13 @@ int main() {
         printf("first[%d]: %d\n", i, first[i]);
     }
 
-    int* second_ptr = second;
+    int* second_ptr = &second[0];
 
     printf("%s\n", "The second array:");
 
     for (i = 0; i < 10; i++) {
-        second[i] = first[9 - i];
-	printf("second[%d]: %d\n", i, second[i]);
+        *(second + i) = first[9 - i];
+	printf("*(second + %d): %d\n", i, *(second + i));
     }
 
     return 0;
